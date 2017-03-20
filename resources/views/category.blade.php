@@ -1,9 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+<body>
 <h3> {{$category->name}}</h3>
 <ul>
-    @foreach($category->articles as $article)
-    <li><a href="{{route("article.get", ["id"=>$article->id])}}">{{$article->title}}</a></li>
-    @endforeach
-</ul>
+    <!--@foreach($category->articles as $article)
+    //<li><a href="{{route("article.get", ["id"=>$article->id])}}">{{$article->title}}</a></li>
+    @endforeach --> 
+   
+</ul id=>
 <form method="POST" action="{{route("article.post")}}">
   <div class="form-group">
     <label>Title</label>
@@ -22,3 +30,19 @@
   
 </div>
  </form>
+
+<script>
+    
+$(document).ready(function(){
+// $("button").click(function(){
+        $.get("<?php echo route("xhr.category.get", ["id"=>$category->id]) ?>", function(data, status){
+       for(var i=0;i<data.length;i++){
+           $("list").append("<li>" + data[i].title"</li>")
+           
+       }
+           
+       // alert("Data: " + data + "\nStatus: " + status);
+       }});
+   // });
+});
+</script>

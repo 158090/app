@@ -44,4 +44,10 @@ class CategoryController extends Controller {
        $category->save();
        return redirect(route("category.get"));
    } 
+   
+   public function xhrGetArticlesByCategory(){
+        $id = request()->route("id");
+    $category = Category::find($id);
+    return reponse()->json($category->artciles);
+    }
 }
