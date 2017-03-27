@@ -1,5 +1,6 @@
-<nav>
-            <a href="{{route('category.get')}}"> Categories </a> <br>
-
-            <!--  <a href="{{route('article.get')}}"> Articles </a> !-->
-        </nav>
+<nav class='main-menu'>
+    <ul>
+        <a href="{{route('category.get')}}"><li class='left'> Categories </li> </a><br>
+        <!--  <a href="{{route('article.get')}}"> Articles </a> !-->
+    </ul>
+</nav>
