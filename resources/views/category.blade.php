@@ -1,48 +1,46 @@
-<!DOCTYPE html>
 <html>
-<head>
+    <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+</html>
 
-</head>
-<body>
-<h3> {{$category->name}}</h3>
+<h3>{{$category->name}}</h3>
 <ul>
     <!--@foreach($category->articles as $article)
-    //<li><a href="{{route("article.get", ["id"=>$article->id])}}">{{$article->title}}</a></li>
-    @endforeach --> 
-   
-</ul id=>
+    <li><a href="{{route("article.get", ["id"=>$article->id])}}">{{$article->title}}</a></li>
+    @endforeach-->
+    
+    
+    
+</ul>
 <form method="POST" action="{{route("article.post")}}">
+  
   <div class="form-group">
     <label>Title</label>
-    <input name="title" type="text" class="form-control" placeholder="...">
-  </div>
-    <div class="form-group">
+    <input name="title" class="form-control" type="text" placeholder="Type article name">
+  </div>  
+    <div>
     <label>Content</label>
-    <textarea name="content" class="form-control" rows="3" placeholder="..."></textarea>
+    <textarea name="content" class="form-control" rows="3" placeholder="Type article"></textarea>
   </div>
- 
-    <input name="category_id" type="hidden" value="{{$category->id}}">
     
-<div class="btn-group" role="group" aria-label="...">
+    <input name="category_id" class="form-control" type="hidden" value="{{$category->id}}">
+    
+  <div class="btn-group" role="group" aria-label="...">
   <button type="submit" class="btn btn-default">Create</button>
   <button type="reset" class="btn btn-default">Cancel</button>
-  
 </div>
- </form>
+
+</form>
 
 <script>
     
 $(document).ready(function(){
-// $("button").click(function(){
-        $.get("<?php echo route("xhr.category.get", ["id"=>$category->id]) ?>", function(data, status){
-       for(var i=0;i<data.length;i++){
-           $("list").append("<li>" + data[i].title"</li>")
-           
-       }
-           
-       // alert("Data: " + data + "\nStatus: " + status);
-       }});
-   // });
+
+        $.get("<?php echo route("xhr.category.create", ["id"=>$category->id]) ?>", function(data, status)
+        {
+         alert("Data: " + data + "\nStatus: " + status);
+       });
+
 });
 </script>
