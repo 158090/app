@@ -1,32 +1,26 @@
+
+
 body{
     background: url('../castle.jpg') no-repeat fixed;
     background-size: cover;
     margin: 0;
-    
-    
+    padding: 0;
+       
 }
 
 .main-section{
-    matgin: 30px auto;
-    text-align: initial;
-    width: 70vw;
+     
     background: white;
-    display: inline-block;
+    text-align: initial;
     opacity: .9;
-    
-    
-    
+
     
 }
 
 .main-menu{ 
-    margin: 0 auto;
-    text-align: initial;
-    width : 70vw;
+    opacity: .9;
     background: white;
-    padding: 15px
-     
-    
+    padding: 15px;
     
 }
 
