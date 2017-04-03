@@ -1,27 +1,24 @@
-<html>
-    <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    </head>
-</html>
+@extends('welcome')
+@section('content')
 
 <h3>{{$category->name}}</h3>
-<ul>
-    <!--@foreach($category->articles as $article)
+<ul id="list">
+    @foreach($category->articles as $article)
     <li><a href="{{route("article.get", ["id"=>$article->id])}}">{{$article->title}}</a></li>
-    @endforeach-->
+    @endforeach
     
     
     
 </ul>
 <form method="POST" action="{{route("article.post")}}">
   
-  <div class="form-group">
-    <label>Title</label>
-    <input name="title" class="form-control" type="text" placeholder="Type article name">
+  <div class="form-group" id="div1">
+    <label for="11">Title</label>
+    <input id="11" name="title" class="form-control" type="text" placeholder="Type article name">
   </div>  
-    <div>
-    <label>Content</label>
-    <textarea name="content" class="form-control" rows="3" placeholder="Type article"></textarea>
+    <div class="form-group" id="div2">
+    <label for="12">Content</label>
+    <textarea id="12" name="content" class="form-control" rows="3" placeholder="Type article"></textarea>
   </div>
     
     <input name="category_id" class="form-control" type="hidden" value="{{$category->id}}">
@@ -37,10 +34,16 @@
     
 $(document).ready(function(){
 
-        $.get("<?php echo route("xhr.category.create", ["id"=>$category->id]) ?>", function(data, status)
-        {
-         alert("Data: " + data + "\nStatus: " + status);
-       });
+        $.get("<?php echo route("xhr.category.create", ["id" => $category->id]) ?>", function (data, status)
+        console.log(status, data);
+        for(var i=0;i<data.length;i++){$("#list").append{'<li><a href="/article/'+data[i].id+'">'+ data[i].title+'</a></li>');
+            }
+        });
+                
+//         alert("Data: " + data + "\nStatus: " + status);
+//       });
 
 });
 </script>
+
+@stop

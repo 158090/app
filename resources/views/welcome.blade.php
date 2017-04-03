@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8"> 
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
-    <link rel="stylesheet" href="css/bootstrap.min.css" > 
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" > 
     </head>
     
     <body class="container-fluid">
@@ -19,9 +19,9 @@
         <section class="row">
           
            <div class="col-sm-2"></div> 
-<div class="col-sm-8">
+            <div class="col-sm-8">
             <article class="main-section">@yield('content')</article>
-</div>
+            </div>
             <div class="col-sm-2"></div> 
 
         </section>

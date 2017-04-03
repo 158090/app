@@ -13,4 +13,4 @@ Route::get('/article/{id?}', array ('as' => 'article.get', 'uses' => 'ArticleCon
 Route::post('/category', array ('as' => 'category.post', 'uses' => 'CategoryController@create'));
 Route::post('/article', array ('as' => 'article.post', 'uses' => 'ArticleController@create'));
 
-Route::get('xhr/category/{id}/article', array('as' => 'xhr.category.get', 'uses' => 'CategoryController@xhrGetArticlesByCategory'));
+Route::get('xhr/category/{id}/article', array('as' => 'xhr.category.create', 'uses' => 'CategoryController@xhrGetArticlesByCategory'));

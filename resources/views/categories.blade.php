@@ -11,9 +11,9 @@
                     </ul>
 
                     <form method="POST">
-                        <div class="form-group">
-                            <label>Category name</label>
-                            <input name="name" type="text" class="form-control" placeholder="...">
+                        <div class="form-group" >
+                            <label for="text1">Category name</label>
+                            <input id="text1" name="name" type="text" class="form-control" placeholder="...">
                         </div>
 
                         <div class="btn-group" role="group" aria-label="...">
