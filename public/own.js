@@ -10,3 +10,26 @@ $('#global1').on('click', function() {
        bg = 0;    
     }
 });
+
+$('#catName').on('keyup', function (){
+    var name = $('#catName').val();
+    console.log(name)
+    if (name.length === 0){
+     $('button[type=submit]').attr('disabled', 'true');  
+    }
+    else {
+        $('button[type=submit]').removeAttr('disabled');
+    }
+})
+
+$('#title_id,#content_id').on('keyup', function (){
+    var title = $('#title_id').val();
+    var content = $('#content_id').val();
+    
+    if (title.length > 0 && content.length > 0){
+         $('button[type=submit]').removeAttr('disabled');
+    }
+    else {
+        $('button[type=submit]').attr('disabled', 'true'); 
+    }
+})

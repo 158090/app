@@ -12,13 +12,15 @@
 
                     <form method="POST">
                         <div class="form-group" >
-                            <label for="text1">Category name</label>
-                            <input id="text1" name="name" type="text" class="form-control" placeholder="...">
+                            <label for="catName">Category name</label>
+                            <input id="catName" name="name" type="text" class="form-control" placeholder="...">
                         </div>
 
                         <div class="btn-group" role="group" aria-label="...">
-                            <button type="submit" class="btn btn-default">Create</button>
+                            <button id="add" type="submit" class="btn btn-default" disabled>Create</button>
                             <button type="reset" class="btn btn-default">Cancel</button>
 
-                        </div>                
+                        </div>    
+                    </form>
+<script> .remoteAttr('disbale')
 @stop
