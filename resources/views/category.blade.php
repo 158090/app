@@ -28,9 +28,25 @@
   <button type="reset" class="btn btn-default">Cancel</button>
 </div>
 
+    <button type="button" id="button1"> Click this to show sth </button>
+    
 </form>
 
 <script>
+    $("#button1").click(function (){
+    $.get("{{ route("xhr.category.create", ["id" => $category->id]) ", function (data, status) {
+        console.log(status, data);
+        for(var i=0;i<data.length;i++){$("#list").append('<li><a href="/article/'+data[i].id+'">'+ data[i].title+'</a></li>');
+            }
+    }
+    }));
+    
+    
+    
+    </script>
+
+
+  <script>
     
 $(document).ready(function(){
 
@@ -38,12 +54,10 @@ $(document).ready(function(){
         console.log(status, data);
         for(var i=0;i<data.length;i++){$("#list").append{'<li><a href="/article/'+data[i].id+'">'+ data[i].title+'</a></li>');
             }
-        });
-                
-//         alert("Data: " + data + "\nStatus: " + status);
-//       });
-
+        });         
 });
 </script>
 
+         alert("Data: " + data + "\nStatus: " + status);
+      }); 
 @stop
